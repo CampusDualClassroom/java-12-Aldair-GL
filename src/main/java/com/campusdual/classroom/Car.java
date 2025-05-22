@@ -66,8 +66,8 @@ public boolean isTachometerGreaterThanZero(){
         }
     }
 
-    public String showSteeringWheelDetail() {
-        return ("El auto gira a unos: "+this.wheelsAngle+" grados el volante");
+    public void showSteeringWheelDetail() {
+        System.out.print("El auto gira a unos: "+this.wheelsAngle+" grados el volante");
     }
 
     public boolean isReverse(){
