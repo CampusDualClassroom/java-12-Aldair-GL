@@ -9,8 +9,9 @@ Car myCar=new Car("Citroën", "Xsara", "Diésel");
     myCar.isTachometerGreaterThanZero();
 myCar.accelerate();
 myCar.stop();
-myCar.isReverse();
-myCar.setReverse(myCar.isReverse());
+
+myCar.setReverse(true);
+System.out.println(myCar.isReverse());
 
 myCar.start();
 myCar.turnAngleOfWheels(20);

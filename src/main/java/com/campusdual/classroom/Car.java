@@ -58,12 +58,13 @@ public boolean isTachometerGreaterThanZero(){
     }
 
     public void turnAngleOfWheels(int angle){
-        if (angle < 45 && angle > -45)
-        {wheelsAngle+=angle;
-            System.out.println("El carro gira unos: "+angle);}
-        else {
-            System.out.println("No puedes girar más de 45 grados");
-        }
+        if (angle <= 45 && angle >= -45)
+        {
+           this.wheelsAngle=angle;
+        } else if (angle > 45) {
+            this.wheelsAngle=45;
+        } else {this.wheelsAngle=-45;}
+
     }
 
     public void showSteeringWheelDetail() {
@@ -71,16 +72,16 @@ public boolean isTachometerGreaterThanZero(){
     }
 
     public boolean isReverse(){
-        if (speedometer == 0) {
-            reverse=true;
-        } return reverse;
+        return this.reverse;
     }
 
     public void setReverse(boolean reverse){
-if (reverse) {
-    this.gear="N";
-    } else {
+if (reverse && !(this.speedometer > 0)) {
     this.gear="R";
+    this.reverse=true;
+    } else if (!reverse){
+    this.gear="N";
+    this.reverse=false;
 }
     }
 
